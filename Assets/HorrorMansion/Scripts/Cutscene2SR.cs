@@ -8,6 +8,8 @@ public class Cutscene2SR : MonoBehaviour
     [SerializeField] private GameObject oldProfessor;
     [SerializeField] private GameObject newProfessor;
 
+    [SerializeField] private GameObject[] food;
+
     private CharacterController characterController;
 
     private void Start()
@@ -24,5 +26,13 @@ public class Cutscene2SR : MonoBehaviour
     {
         oldProfessor.SetActive(false);
         newProfessor.SetActive(true);
+    }
+
+    public void HideFood()
+    {
+        for(int i = 0; i < food.Length; i++)
+        {
+            food[i].SetActive(false);
+        }
     }
 }
