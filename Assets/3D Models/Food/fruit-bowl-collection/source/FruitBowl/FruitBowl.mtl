@@ -1,0 +1,99 @@
+newmtl apple
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/apple_baseColor.jpg
+map_Bump -bm 1.000000 textures/apple_normal.jpg
+
+newmtl banana
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/banana_baseColor.jpg
+map_Ns textures/banana_roughness.jpg
+map_Bump -bm 1.000000 textures/banana_normal.jpg
+
+newmtl bowl
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/Schale_Wood_BaseColor.png
+map_Ns textures/Schale_Wood_Roughness.png
+map_refl textures/Schale_Wood_Metallic.png
+map_Bump -bm 1.000000 textures/Schale_Wood_Normal.png
+
+newmtl lemon
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/lemon_baseColor.jpg
+map_Ns textures/lemon_roughness.jpg
+map_Bump -bm 1.000000 textures/lemon_normal.jpg
+
+newmtl lime
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/lime_baseColor.jpg
+map_Ns textures/lime_roughness.jpg
+map_Bump -bm 1.000000 textures/lime_normal.jpg
+
+newmtl pear
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/pear_baseColor.jpg
+map_Ns textures/pear_roughness.jpg
+map_Bump -bm 1.000000 textures/pear_normal.jpg
+
+newmtl pineapple
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/pineapple_baseColor.jpg
+map_Ns textures/pineapple_roughness.jpg
+map_Bump -bm 1.000000 textures/pineapple_normal.jpg
+
+newmtl plum
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/plum_baesColor.jpg
+map_Ns textures/plum_roughness.jpg
+map_Bump -bm 1.000000 textures/plum_normal.jpg
+
+newmtl pumpkin
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/pumpkin_baseColor.jpg
+map_Ns textures/pumpkin_roughness.jpg
+map_Bump -bm 1.000000 textures/pumpkin_normal.jpg
