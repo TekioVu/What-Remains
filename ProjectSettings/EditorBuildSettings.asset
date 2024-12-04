@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Horror_Mansion/Scenes/GAME SCENES/Cutscene_1.unity
+    path: Assets/HorrorMansion/Scenes/GAME SCENES/Cutscene_1.unity
     guid: 2f99c9bef5060d1419c81909459f9484
   - enabled: 1
-    path: Assets/Horror_Mansion/Scenes/GAME SCENES/Cutscene_2.unity
+    path: Assets/HorrorMansion/Scenes/GAME SCENES/Cutscene_2.unity
     guid: c25ffcfec4eb2b046af4e3294e55aad5
   - enabled: 1
-    path: Assets/Horror_Mansion/Scenes/GAME SCENES/Cutscene_3.unity
+    path: Assets/HorrorMansion/Scenes/GAME SCENES/Cutscene_3.unity
     guid: bd827f6fbd6577b45b67e01aa50ff79d
+  - enabled: 1
+    path: Assets/HorrorMansion/Scenes/GAME SCENES/Cutscene_4.unity
+    guid: 1893cf6ede7f2ea478683baf70d5e564
+  - enabled: 1
+    path: Assets/HorrorMansion/Scenes/GAME SCENES/GAME.unity
+    guid: 17a7b1cfca36fda4cba180e1321088e2
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: ae838b1c970aab641bb8e4643590df24, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: ce68c4c37abec5347801e4204a280574, type: 2}
