@@ -927,14 +927,14 @@ MonoBehaviour:
     Items:
     - GUID: b70a06636e824c48a8631756ccb04b3c
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
-      Title: Key 01
+      Title: BlueKey
       Description: A generic, yet mysterious key with an unknown use. Keep it on
         hand, as it may unlock doors, chests, or secrets yet to be discovered.
       Width: 1
       Height: 1
       Orientation: 0
       FlipDirection: 0
-      Icon: {fileID: 21300000, guid: 5bbd29b842d27754596feeb5f711b24a, type: 3}
+      Icon: {fileID: 21300000, guid: 4d0147ef6d65a6f40bd5fe05ab1176e6, type: 3}
       ItemObject:
         GUID: 
         Object: {fileID: 0}
@@ -967,14 +967,14 @@ MonoBehaviour:
             on hand, as it may unlock doors, chests, or secrets yet to be discovered.
     - GUID: 12bb84ecda3946579a8db52385d1f86b
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
-      Title: Key 02
+      Title: OrangeKey
       Description: A generic, yet mysterious key with an unknown use. Keep it on
         hand, as it may unlock doors, chests, or secrets yet to be discovered.
       Width: 1
       Height: 1
       Orientation: 0
       FlipDirection: 0
-      Icon: {fileID: 21300000, guid: af115a1c0c170204f8bde12e8c626416, type: 3}
+      Icon: {fileID: 21300000, guid: ed94636e774b9264a83c8e3cec29ab84, type: 3}
       ItemObject:
         GUID: 
         Object: {fileID: 0}
@@ -1007,14 +1007,14 @@ MonoBehaviour:
             on hand, as it may unlock doors, chests, or secrets yet to be discovered.
     - GUID: eb63b2ffe5af4b8cb8396f2d6eae67e5
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
-      Title: Key 03
+      Title: PurpleKey
       Description: A generic, yet mysterious key with an unknown use. Keep it on
         hand, as it may unlock doors, chests, or secrets yet to be discovered.
       Width: 1
       Height: 1
       Orientation: 0
       FlipDirection: 0
-      Icon: {fileID: 21300000, guid: 17b81cd23576da14699ba19b583cd910, type: 3}
+      Icon: {fileID: 21300000, guid: 7a1d97b0c82263e4eb16aaf5ea4434f1, type: 3}
       ItemObject:
         GUID: 
         Object: {fileID: 0}
@@ -1047,14 +1047,14 @@ MonoBehaviour:
             on hand, as it may unlock doors, chests, or secrets yet to be discovered.
     - GUID: 1a62d00e739445248211bcfbc6189138
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
-      Title: Key 04
+      Title: RedKey
       Description: A generic, yet mysterious key with an unknown use. Keep it on
         hand, as it may unlock doors, chests, or secrets yet to be discovered.
       Width: 1
       Height: 1
       Orientation: 0
       FlipDirection: 0
-      Icon: {fileID: 21300000, guid: 7944d3858274a354fbf45199a2681de7, type: 3}
+      Icon: {fileID: 21300000, guid: dab83f994d5ecdc4ca5b7132bca6e8e4, type: 3}
       ItemObject:
         GUID: 
         Object: {fileID: 0}
@@ -1087,14 +1087,14 @@ MonoBehaviour:
             on hand, as it may unlock doors, chests, or secrets yet to be discovered.
     - GUID: 355bd6991b46488ba4407ea02506ee95
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
-      Title: Keys
+      Title: YellowKey
       Description: Assorted metal keys on a ring. Opens various locks. Essential
         for access and exploration.
       Width: 1
       Height: 1
       Orientation: 0
       FlipDirection: 0
-      Icon: {fileID: 21300000, guid: 210db75816f8a53468416f0fa4c51acd, type: 3}
+      Icon: {fileID: 21300000, guid: 65cdf2bb07abb89408f4504e9345896f, type: 3}
       ItemObject:
         GUID: 
         Object: {fileID: 0}
@@ -1289,8 +1289,10 @@ MonoBehaviour:
           NormalText: VHS Cassette
         descriptionKey:
           GlocText: item.description.vhscassette
-          NormalText: A classic, durable format for video recording and archiving
-            memories or documenting important events.
+          NormalText: 'Name: {name}
+
+            A classic, durable format for video
+            recording and archiving memories or documenting important events.'
     - GUID: 21cc6375d5614192aac1fedce6147cfa
       SectionGUID: be7f17ba3cb145e6883bea6a70f0deb7
       Title: Red Keycard
