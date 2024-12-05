@@ -959,12 +959,12 @@ MonoBehaviour:
       CombineSettings: []
       LocalizationSettings:
         titleKey:
-          GlocText: item.title.key01
-          NormalText: Key 01
+          GlocText: BlueKey
+          NormalText: BlueKey
         descriptionKey:
-          GlocText: item.description.key01
-          NormalText: A generic, yet mysterious key with an unknown use. Keep it
-            on hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          GlocText: A generic, yet mysterious key with an unknown use. Keep it on
+            hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          NormalText: item.description.BlueKey
     - GUID: 12bb84ecda3946579a8db52385d1f86b
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
       Title: OrangeKey
@@ -999,12 +999,12 @@ MonoBehaviour:
       CombineSettings: []
       LocalizationSettings:
         titleKey:
-          GlocText: item.title.key02
-          NormalText: Key 02
+          GlocText: OrangeKey
+          NormalText: OrangeKey
         descriptionKey:
-          GlocText: item.description.key02
-          NormalText: A generic, yet mysterious key with an unknown use. Keep it
-            on hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          GlocText: A generic, yet mysterious key with an unknown use. Keep it on
+            hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          NormalText: item.description.OrangeKey
     - GUID: eb63b2ffe5af4b8cb8396f2d6eae67e5
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
       Title: PurpleKey
@@ -1039,12 +1039,12 @@ MonoBehaviour:
       CombineSettings: []
       LocalizationSettings:
         titleKey:
-          GlocText: item.title.key03
-          NormalText: Key 03
+          GlocText: PurpleKey
+          NormalText: PurpleKey
         descriptionKey:
-          GlocText: item.description.key03
-          NormalText: A generic, yet mysterious key with an unknown use. Keep it
-            on hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          GlocText: A generic, yet mysterious key with an unknown use. Keep it on
+            hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          NormalText: item.description.PurpleKey
     - GUID: 1a62d00e739445248211bcfbc6189138
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
       Title: RedKey
@@ -1079,12 +1079,12 @@ MonoBehaviour:
       CombineSettings: []
       LocalizationSettings:
         titleKey:
-          GlocText: item.title.key04
-          NormalText: Key 04
+          GlocText: RedKey
+          NormalText: RedKey
         descriptionKey:
-          GlocText: item.description.key04
-          NormalText: A generic, yet mysterious key with an unknown use. Keep it
-            on hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          GlocText: A generic, yet mysterious key with an unknown use. Keep it on
+            hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          NormalText: item.description.RedKey
     - GUID: 355bd6991b46488ba4407ea02506ee95
       SectionGUID: 9ce7786df37c4160ae9a0542acd94613
       Title: YellowKey
@@ -1119,12 +1119,12 @@ MonoBehaviour:
       CombineSettings: []
       LocalizationSettings:
         titleKey:
-          GlocText: item.title.keys
-          NormalText: Keys
+          GlocText: YellowKey
+          NormalText: YellowKey
         descriptionKey:
-          GlocText: item.description.keys
-          NormalText: Assorted metal keys on a ring. Opens various locks. Essential
-            for access and exploration.
+          GlocText: A generic, yet mysterious key with an unknown use. Keep it on
+            hand, as it may unlock doors, chests, or secrets yet to be discovered.
+          NormalText: item.description.YellowKey
   - Section:
       Name: Usables
       GUID: be7f17ba3cb145e6883bea6a70f0deb7

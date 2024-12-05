@@ -13,6 +13,8 @@ public class Door : MonoBehaviour
     private Quaternion openRot;
     public Text txt;
 
+    public bool locked = false;
+
     void Start()
     {
         defaultRot = transform.rotation;
@@ -27,7 +29,7 @@ public class Door : MonoBehaviour
             ePressed = false;
         }
 
-        if (open && Quaternion.Angle(transform.rotation, openRot) > rotationTolerance)
+        if (open && Quaternion.Angle(transform.rotation, openRot) > rotationTolerance && !locked)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
         }

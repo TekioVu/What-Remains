@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private List<Key.KeyType> keyList;
+
+    private void Awake()
     {
-        
+        keyList = new List<Key.KeyType>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddKey(Key.KeyType keyType)
     {
-        
+        keyList.Add(keyType);
     }
+
+    public void RemoveKey(Key.KeyType keyType)
+    {
+        keyList.Remove(keyType);
+    }
+
+    
 }
