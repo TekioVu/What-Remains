@@ -41,28 +41,17 @@ public class PuzzleDoor : MonoBehaviour
             if(!keyLockManager.DoorLocked())
              transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
              else {
+                    txt.text = "";
                     puzzleCamera.SetActive(true);
                     puzzleCameraScript.CameraActivated();
                 }
         }
-        else if (!open && Quaternion.Angle(transform.rotation, defaultRot) > rotationTolerance)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, defaultRot, Time.deltaTime * smooth);
-        }
 
         if (trig)
         {
-            if (open)
+            if (!open && keyLockManager.DoorLocked())
             {
-                if(!keyLockManager.DoorLocked())
-                txt.text = "Close E";
-                else txt.text = " ";
-            }
-            else
-            {
-                if(!keyLockManager.DoorLocked())
-                txt.text = "Open E";
-                else txt.text = "Unlock Door";
+                txt.text = "Unlock Door";
             }
         }
     }
@@ -71,18 +60,6 @@ public class PuzzleDoor : MonoBehaviour
     {
         if (coll.CompareTag("Player"))
         {
-            if (!open)
-            {
-                if(!keyLockManager.DoorLocked())
-                txt.text = "Close E";
-                else txt.text = " ";
-            }
-            else
-            {
-                if(!keyLockManager.DoorLocked())
-                txt.text = "Open E";
-                else txt.text = "Unlock Door";
-            }
             trig = true;
         }
     }
