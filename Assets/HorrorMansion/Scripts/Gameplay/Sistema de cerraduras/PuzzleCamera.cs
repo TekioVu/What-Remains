@@ -7,7 +7,20 @@ public class PuzzleCamera : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject puzzleUI;
+
     private CharacterController characterController;
+
+    [SerializeField] private GameObject keyLockManagerHolder;
+    [SerializeField] private GameObject keyButtonsMenuHolder;
+
+    private KeyLockManager keyLockManager;
+    private KeyButtonsMenu keyButtonsMenu;
+
+    private void Start()
+    {
+        keyLockManager = keyLockManagerHolder.GetComponent<KeyLockManager>();
+        keyButtonsMenu = keyButtonsMenuHolder.GetComponent<KeyButtonsMenu>();
+    }
 
     public void CameraActivated()
     {
@@ -27,6 +40,13 @@ public class PuzzleCamera : MonoBehaviour
             characterController.enabled = true;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+
+            if(keyLockManager.DoorLocked())
+            {
+                keyLockManager.RestartLocks();
+                keyLockManager.RestartKeyButtons();
+                keyButtonsMenu.RestartHandleKeys();
+            }
 
             puzzleUI.SetActive(false);
             gameObject.SetActive(false);

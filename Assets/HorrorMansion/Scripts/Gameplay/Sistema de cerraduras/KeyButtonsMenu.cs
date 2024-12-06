@@ -44,6 +44,7 @@ public class KeyButtonsMenu : MonoBehaviour
         }
 
         parentKeyLock.gameObject.SetActive(false);
+        gameObject.SetActive(false);
 
     }
 
@@ -56,5 +57,19 @@ public class KeyButtonsMenu : MonoBehaviour
             if(keyToDoorMap.TryGetValue(introducedKeyType, out int keyIndex))
             doorLock.ActivateKeyAnimation(keyIndex);
         }
+    }
+
+    public void RestartHandleKeys()
+    {
+        for(int i = 0; i < doorLocks.Length; i++)
+        {
+            DoorLock doorLock = doorLocks[i].GetComponent<DoorLock>();
+            doorLock.RestartKeys();
+
+            Animator anim = doorLock.gameObject.GetComponent<Animator>();
+            anim.SetBool("IntroduceKey", false);
+        }
+
+        gameObject.SetActive(false);
     }
 }

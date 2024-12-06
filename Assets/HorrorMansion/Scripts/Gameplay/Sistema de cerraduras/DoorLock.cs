@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorLock : MonoBehaviour
 {
     [SerializeField] private GameObject[] keys;
+
     private Animator animator;
 
     private void Start()
@@ -15,6 +16,14 @@ public class DoorLock : MonoBehaviour
     public void ActivateKeyAnimation(int i)
     {
         keys[i].SetActive(true);
-        animator.SetTrigger("IntroduceKey");
+        animator.SetBool("IntroduceKey", true);
+    }
+
+    public void RestartKeys()
+    {
+        for(int i = 0; i < keys.Length; i++)
+        {
+            keys[i].SetActive(false);
+        }
     }
 }
