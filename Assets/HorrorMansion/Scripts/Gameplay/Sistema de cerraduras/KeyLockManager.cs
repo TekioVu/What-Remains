@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyLockManager : MonoBehaviour
 {
-    public bool doorLocked()
+    public bool DoorLocked()
     {
         int openCount = 0;
 
@@ -20,6 +20,4 @@ public class KeyLockManager : MonoBehaviour
         else
             return true;
     }
-
-
 }
