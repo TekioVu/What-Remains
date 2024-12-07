@@ -13,10 +13,18 @@ public class Door : MonoBehaviour
     private Quaternion openRot;
     public Text txt;
 
+    [SerializeField] private GameObject audioManagerHolder;
+    private AudioManager audioManager;
+
+    [SerializeField] private bool audioManagerNecessary = false;
+
     void Start()
     {
         defaultRot = transform.rotation;
         openRot = Quaternion.Euler(defaultRot.eulerAngles + Vector3.up * DoorOpenAngle);
+
+        if(audioManagerNecessary)
+        audioManager = audioManagerHolder.GetComponent<AudioManager>();
     }
 
     void Update()
@@ -40,11 +48,11 @@ public class Door : MonoBehaviour
         {
             if (open)
             {
-                txt.text = "Close E";
+                txt.text = "Close [E]";
             }
             else
             {
-                txt.text = "Open E";
+                txt.text = "Open [E]";
             }
         }
     }
@@ -55,11 +63,11 @@ public class Door : MonoBehaviour
         {
             if (!open)
             {
-                txt.text = "Close E";
+                txt.text = "Close [E]";
             }
             else
             {
-                txt.text = "Open E";
+                txt.text = "Open [E]";
             }
             trig = true;
         }
@@ -81,6 +89,11 @@ public class Door : MonoBehaviour
             // Cambiar esta línea para usar el nuevo Input System
             if (Keyboard.current.eKey.wasPressedThisFrame)  // Nueva API
             {
+                if(audioManagerNecessary)
+                {
+                    if(open) audioManager.PlaySFX(audioManager.openDoor);
+                    else audioManager.PlaySFX(audioManager.closeDoor);
+                }
                 ePressed = true;
             }
         }

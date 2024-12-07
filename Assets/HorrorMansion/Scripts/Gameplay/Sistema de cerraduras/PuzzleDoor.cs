@@ -25,6 +25,7 @@ public class PuzzleDoor : MonoBehaviour
     private KeyTriggerManager keyTriggerManager;
 
     private bool alreadyDialogued = false;
+    private bool lookingPuzzle = false;
 
     void Start()
     {
@@ -51,18 +52,17 @@ public class PuzzleDoor : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
             else if(keyTriggerManager.AllKeysObtained() && trig)
             {
+                lookingPuzzle = true;
+
                 txt.text = "";
                 puzzleCamera.SetActive(true);
                 puzzleCameraScript.CameraActivated();
             } 
         }
 
-        if (trig)
+        if (trig && keyLockManager.DoorLocked() && !lookingPuzzle)
         {
-            if (!open && keyLockManager.DoorLocked())
-            {
-                txt.text = "Unlock Door [E]";
-            }
+            txt.text = "Unlock Door \\[E\\]";
         }  
     }
 
