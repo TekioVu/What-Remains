@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;  // Añadir el nuevo namespace
 using UnityEngine.UI;
+using System.Collections;
 
 public class PuzzleDoor : MonoBehaviour
 {
@@ -16,10 +17,14 @@ public class PuzzleDoor : MonoBehaviour
     [SerializeField] private GameObject HandleButtons;
     [SerializeField] private GameObject puzzleCamera;
     [SerializeField] private GameObject audioManagerHolder;
+    [SerializeField] private GameObject keyTriggerManagerHolder;
 
     private KeyLockManager keyLockManager;
     private PuzzleCamera puzzleCameraScript;
     private AudioManager audioManager;
+    private KeyTriggerManager keyTriggerManager;
+
+    private bool alreadyDialogued = false;
 
     void Start()
     {
@@ -29,6 +34,7 @@ public class PuzzleDoor : MonoBehaviour
         keyLockManager = HandleButtons.GetComponent<KeyLockManager>();
         puzzleCameraScript = puzzleCamera.GetComponent<PuzzleCamera>();
         audioManager = audioManagerHolder.GetComponent<AudioManager>();
+        keyTriggerManager = keyTriggerManagerHolder.GetComponent<KeyTriggerManager>();
     }
 
     void Update()
@@ -43,12 +49,12 @@ public class PuzzleDoor : MonoBehaviour
         {
             if(!keyLockManager.DoorLocked())
                 transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
-             
-             else {
-                    txt.text = "";
-                    puzzleCamera.SetActive(true);
-                    puzzleCameraScript.CameraActivated();
-                }
+            else if(keyTriggerManager.AllKeysObtained())
+            {
+                txt.text = "";
+                puzzleCamera.SetActive(true);
+                puzzleCameraScript.CameraActivated();
+            } 
         }
 
         if (trig)
@@ -57,7 +63,7 @@ public class PuzzleDoor : MonoBehaviour
             {
                 txt.text = "Unlock Door [E]";
             }
-        }
+        }  
     }
 
     private void OnTriggerEnter(Collider coll)
@@ -81,11 +87,24 @@ public class PuzzleDoor : MonoBehaviour
     {
         if (coll.CompareTag("Player"))
         {
-            // Cambiar esta línea para usar el nuevo Input System
-            if (Keyboard.current.eKey.wasPressedThisFrame)  // Nueva API
+            if (Keyboard.current.eKey.wasPressedThisFrame)
             {
                 ePressed = true;
+
+                if(!keyTriggerManager.AllKeysObtained() && !alreadyDialogued)
+                {
+                    alreadyDialogued = true;
+                    audioManager.PlaySFX(audioManager.needToFindKeys);
+                    StartCoroutine(DialogueCooldown());
+                    txt.text = "";
+                }
             }
         }
+    }
+
+    private IEnumerator DialogueCooldown()
+    {
+        yield return new WaitForSeconds(6f);
+        alreadyDialogued = false;
     }
 }
