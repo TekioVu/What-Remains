@@ -5,13 +5,22 @@ using UnityEngine.EventSystems;
 public class KeyButtonsMenu : MonoBehaviour
 {
     private KeyLock parentKeyLock;
+
     [SerializeField] private GameObject[] doorLocks;
+    [SerializeField] private GameObject puzzleCameraHolder;
+    [SerializeField] private GameObject audioManagerHolder;
 
     private Dictionary<string, int> keyToDoorMap;
 
+    public int introducedKeys = 0;
+
+    private PuzzleCamera puzzleCamera;
+    private AudioManager audioManager;
+
+    public int failsUntilMessage = 0;
+
     void Start()
     {
-        // Inicializa el diccionario que asocia colores de llaves con índices de cerraduras.
         keyToDoorMap = new Dictionary<string, int>
         {
             { "Purple", 0 },
@@ -20,6 +29,9 @@ public class KeyButtonsMenu : MonoBehaviour
             { "Yellow", 3 },
             { "Blue", 4 }
         };
+
+        puzzleCamera = puzzleCameraHolder.GetComponent<PuzzleCamera>();
+        audioManager = audioManagerHolder.GetComponent<AudioManager>();
     }
 
     public void SetParentKeyLock(KeyLock keyLock)
@@ -40,12 +52,24 @@ public class KeyButtonsMenu : MonoBehaviour
         GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
         if (clickedButton != null)
         {
-            clickedButton.SetActive(false); // Oculta el botón
+            clickedButton.SetActive(false); 
+        }
+        parentKeyLock.gameObject.SetActive(false);
+
+        introducedKeys++;
+        if(introducedKeys == 5)
+        {
+            audioManager.PlaySFX(audioManager.lockedDoor);
+            if(failsUntilMessage == 0)
+            {
+                audioManager.PlaySFX(audioManager.specificCombination);
+                failsUntilMessage = 2;
+            } else failsUntilMessage--;   
+        
+            puzzleCamera.ExitPuzzle();
         }
 
-        parentKeyLock.gameObject.SetActive(false);
         gameObject.SetActive(false);
-
     }
 
     private void SearchDoorHandle(string parentKeyLock, string introducedKeyType)
@@ -69,6 +93,7 @@ public class KeyButtonsMenu : MonoBehaviour
             Animator anim = doorLock.gameObject.GetComponent<Animator>();
             anim.SetBool("IntroduceKey", false);
         }
+        introducedKeys = 0;
 
         gameObject.SetActive(false);
     }

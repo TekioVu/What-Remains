@@ -5,6 +5,15 @@ using UnityEngine;
 public class KeyLockManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] keysButtons;
+    [SerializeField] private GameObject audioManagerHolder;
+    private AudioManager audioManager;
+
+    private bool alreadyPlayedSFX = false;
+
+    private void Start()
+    {
+        audioManager = audioManagerHolder.GetComponent<AudioManager>();
+    }
 
     public bool DoorLocked()
     {
@@ -18,7 +27,14 @@ public class KeyLockManager : MonoBehaviour
         }
 
         if(openCount == 5) 
+        {
+            if(!alreadyPlayedSFX)
+            {
+                alreadyPlayedSFX = true;
+                audioManager.PlaySFX(audioManager.openLockedDoor);
+            }
             return false;
+        }
         else
             return true;
     }

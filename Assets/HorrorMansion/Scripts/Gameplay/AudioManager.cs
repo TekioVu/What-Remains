@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
 
     public AudioClip professorWaiting;
+    public AudioClip openLockedDoor;
+    public AudioClip lockedDoor;
+    public AudioClip specificCombination;
 
     public void Start(){
         musicSource.clip = background;

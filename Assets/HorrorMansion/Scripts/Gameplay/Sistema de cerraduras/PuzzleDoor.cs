@@ -15,9 +15,11 @@ public class PuzzleDoor : MonoBehaviour
 
     [SerializeField] private GameObject HandleButtons;
     [SerializeField] private GameObject puzzleCamera;
+    [SerializeField] private GameObject audioManagerHolder;
 
     private KeyLockManager keyLockManager;
     private PuzzleCamera puzzleCameraScript;
+    private AudioManager audioManager;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class PuzzleDoor : MonoBehaviour
 
         keyLockManager = HandleButtons.GetComponent<KeyLockManager>();
         puzzleCameraScript = puzzleCamera.GetComponent<PuzzleCamera>();
+        audioManager = audioManagerHolder.GetComponent<AudioManager>();
     }
 
     void Update()
@@ -39,7 +42,8 @@ public class PuzzleDoor : MonoBehaviour
         if (open && Quaternion.Angle(transform.rotation, openRot) > rotationTolerance)
         {
             if(!keyLockManager.DoorLocked())
-             transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
+                transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
+             
              else {
                     txt.text = "";
                     puzzleCamera.SetActive(true);
@@ -51,7 +55,7 @@ public class PuzzleDoor : MonoBehaviour
         {
             if (!open && keyLockManager.DoorLocked())
             {
-                txt.text = "Unlock Door";
+                txt.text = "Unlock Door [E]";
             }
         }
     }
