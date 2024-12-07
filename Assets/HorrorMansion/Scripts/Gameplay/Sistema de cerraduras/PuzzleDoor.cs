@@ -49,7 +49,7 @@ public class PuzzleDoor : MonoBehaviour
         {
             if(!keyLockManager.DoorLocked())
                 transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
-            else if(keyTriggerManager.AllKeysObtained())
+            else if(keyTriggerManager.AllKeysObtained() && trig)
             {
                 txt.text = "";
                 puzzleCamera.SetActive(true);

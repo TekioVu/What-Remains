@@ -42,6 +42,7 @@ public class KeyButtonsMenu : MonoBehaviour
 
     public void IntroduceKey(string introducedKeyType)
     {
+        audioManager.PlaySFX(audioManager.introduceKey);
         SearchDoorHandle(parentKeyLock.keyType.ToString(), introducedKeyType);
 
         if (introducedKeyType == parentKeyLock.keyType.ToString())
@@ -60,6 +61,7 @@ public class KeyButtonsMenu : MonoBehaviour
         if(introducedKeys == 5)
         {
             audioManager.PlaySFX(audioManager.lockedDoor);
+            
             if(failsUntilMessage == 0)
             {
                 audioManager.PlaySFX(audioManager.specificCombination);

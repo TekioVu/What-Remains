@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip openLockedDoor;
     public AudioClip lockedDoor;
+    public AudioClip introduceKey;
 
     public AudioClip specificCombination;
     public AudioClip tooDark;
