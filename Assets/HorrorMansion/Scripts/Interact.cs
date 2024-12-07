@@ -5,7 +5,7 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     public GameObject LightObject;
-    private bool lightOnOff;
+    private bool lightOnOff = false;
 
     public void OnOffL()
     {
@@ -13,7 +13,8 @@ public class Interact : MonoBehaviour
 
         if (lightOnOff == true)
             LightObject.SetActive(true);
-        if (lightOnOff == false)
+        else 
             LightObject.SetActive(false);
+        Debug.Log(lightOnOff);
     }
 }
