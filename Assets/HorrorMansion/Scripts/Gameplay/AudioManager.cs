@@ -24,6 +24,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip tooDark;
     public AudioClip needToFindKeys;
 
+    public AudioClip creepyReflectionSFX;
+
     public void Start(){
         musicSource.clip = background;
         musicSource.Play();
