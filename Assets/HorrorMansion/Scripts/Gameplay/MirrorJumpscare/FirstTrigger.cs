@@ -5,9 +5,21 @@ using UnityEngine;
 public class FirstTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject creepyReflection;
+    [SerializeField] private GameObject secondTrigger;
 
-    public void FirstTriggerDetected()
+    private bool firstTime = true;
+
+    public void OnTriggerEnter(Collider coll)
     {
-        creepyReflection.SetActive(true);
+        if(coll.CompareTag("Player"))
+        {
+            if(firstTime)
+            {
+                firstTime = false;
+                creepyReflection.SetActive(true);
+                secondTrigger.SetActive(true);
+            }
+            
+        }
     }
 }
