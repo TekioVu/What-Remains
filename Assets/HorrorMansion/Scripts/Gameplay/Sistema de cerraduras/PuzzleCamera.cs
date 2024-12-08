@@ -8,8 +8,6 @@ public class PuzzleCamera : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject puzzleUI;
 
-    private CharacterController characterController;
-
     [SerializeField] private GameObject keyLockManagerHolder;
     [SerializeField] private GameObject keyButtonsMenuHolder;
     [SerializeField] private GameObject puzzleDoorHolder;
@@ -27,8 +25,7 @@ public class PuzzleCamera : MonoBehaviour
 
     public void CameraActivated()
     {
-        characterController = player.GetComponent<CharacterController>();
-        characterController.enabled = false;
+        player.SetActive(false);
 
         puzzleUI.SetActive(true);
 
@@ -46,7 +43,7 @@ public class PuzzleCamera : MonoBehaviour
 
     public void ExitPuzzle()
     {
-        characterController.enabled = true;
+        player.SetActive(true);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
