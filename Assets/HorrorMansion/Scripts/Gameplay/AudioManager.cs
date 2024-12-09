@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip needToFindKeys;
 
     public AudioClip basementDoors;
+    public AudioClip creepyReflectionSFX;
 
     public void Start(){
         musicSource.clip = background;
