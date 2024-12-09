@@ -10,7 +10,7 @@ public class FirstTrigger : MonoBehaviour
 
     private AudioManager audioManager;
 
-    private int timesEntered = 0;
+    private bool firsTime = true;
 
     private void Start()
     {
@@ -21,13 +21,13 @@ public class FirstTrigger : MonoBehaviour
     {
         if(coll.CompareTag("Player"))
         {
-            if(timesEntered == 1)
+            if(firsTime)
             {
+                firsTime = false;
                 audioManager.PlaySFX(audioManager.creepyReflectionSFX);
                 creepyReflection.SetActive(true);
                 secondTrigger.SetActive(true);
             } 
-            timesEntered++;
         }
     }
 }
