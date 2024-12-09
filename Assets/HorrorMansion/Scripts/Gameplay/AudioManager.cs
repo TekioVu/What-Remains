@@ -24,6 +24,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip tooDark;
     public AudioClip needToFindKeys;
 
+    public AudioClip basementDoors;
+
     public void Start(){
         musicSource.clip = background;
         musicSource.Play();
