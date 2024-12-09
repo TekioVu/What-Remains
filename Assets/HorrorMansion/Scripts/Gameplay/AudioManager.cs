@@ -26,6 +26,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip basementDoors;
     public AudioClip creepyReflectionSFX;
+    public AudioClip elevatorNoise;
+
+    public AudioClip elevatorCard;
 
     public void Start(){
         musicSource.clip = background;
