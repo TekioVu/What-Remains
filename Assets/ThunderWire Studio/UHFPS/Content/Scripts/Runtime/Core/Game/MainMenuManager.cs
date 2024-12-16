@@ -20,14 +20,14 @@ namespace UHFPS.Runtime
             SaveGameManager.ClearLoadType();
             StartCoroutine(LoadNewGame());
         }
-
+    
         IEnumerator LoadNewGame()
         {
             yield return BackgroundFader.StartBackgroundFade(false);
             if(NewGameRemoveSaves) yield return new WaitToTaskComplete(SaveGameManager.RemoveAllSaves());
 
             SaveGameManager.LoadSceneName = NewGameSceneName;
-            SceneManager.LoadScene(SaveGameManager.LMS);
+            SceneManager.LoadScene("Cutscene_1");
         }
 
         public void QuitGame()
