@@ -797,7 +797,7 @@ MonoBehaviour:
     m_Start: 58.28333333333332
     m_ClipIn: 27.966054421768707
     m_Asset: {fileID: 6285057946672985879}
-    m_Duration: 19.811904761904756
+    m_Duration: 9.716666666666683
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4204177085925784025}
     m_EaseInDuration: 0
@@ -806,7 +806,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
