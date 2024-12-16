@@ -1236,7 +1236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &423187573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,8 +1259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The days blurred together as the holiday break began...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b5061a9bc38b7284d9cc6568f5a5b7dd, type: 2}
-  m_sharedMaterial: {fileID: 9108110975851271829, guid: b5061a9bc38b7284d9cc6568f5a5b7dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 906c89eb50724ec49a934be19961bbf7, type: 2}
+  m_sharedMaterial: {fileID: 4596306539946613251, guid: 906c89eb50724ec49a934be19961bbf7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
