@@ -4,6 +4,7 @@ using UHFPS.Runtime;
 
 public class CutsceneTriggerHomemade : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     public PlayableDirector cutscene; 
     private CharacterController characterController;
 
@@ -11,7 +12,7 @@ public class CutsceneTriggerHomemade : MonoBehaviour
 
     void Start()
     {
-        characterController = FindObjectOfType<PlayerManager>().GetComponent<CharacterController>();
+        characterController = player.GetComponent<PlayerManager>().GetComponent<CharacterController>();
 
         if (cutscene != null)
         {

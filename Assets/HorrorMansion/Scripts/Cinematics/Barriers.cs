@@ -5,12 +5,13 @@ using UnityEngine;
 public class Barriers : MonoBehaviour
 {
     [SerializeField] private GameObject textBox;
+    [SerializeField] private GameObject audioManagerHolder;
     private AudioManager audioManager;
     private bool alreadyMessaged = false;
 
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        audioManager = audioManagerHolder.GetComponent<AudioManager>();
     }
     
     private IEnumerator PrintMessage()
