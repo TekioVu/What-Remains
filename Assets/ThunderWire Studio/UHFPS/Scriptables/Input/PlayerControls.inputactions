@@ -54,7 +54,7 @@
                     "name": "input.action.examine",
                     "type": "Button",
                     "id": "1a028dd5-8cda-4498-9128-ec9ba6d4296e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -423,7 +423,7 @@
                     "name": "input.action.pause",
                     "type": "Button",
                     "id": "a73b4a0d-58c6-4945-845c-52f923b252b9",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -441,7 +441,7 @@
                     "name": "input.action.map",
                     "type": "Button",
                     "id": "e17cc77a-efb6-4028-9f15-46ea909bf93c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -450,7 +450,7 @@
                     "name": "input.action.inventory.rotate",
                     "type": "Button",
                     "id": "6d36ffc9-4e4f-4f31-ae51-b0f63ed56cf7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -468,7 +468,7 @@
                     "name": "input.action.inventory.select",
                     "type": "Button",
                     "id": "84379244-e40e-4d31-a4c4-96f77c4255d5",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
