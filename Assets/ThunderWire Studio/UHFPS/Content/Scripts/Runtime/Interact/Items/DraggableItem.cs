@@ -81,8 +81,8 @@ namespace UHFPS.Runtime
             if (impactTime > 0) impactTime -= Time.deltaTime;
             if (!EnableSlidingSound) return;
 
-            float velMagnitude = rigid.velocity.magnitude;
-            float velMagnitudeNormalized = rigid.velocity.normalized.magnitude;
+            float velMagnitude = rigid.linearVelocity.magnitude;
+            float velMagnitudeNormalized = rigid.linearVelocity.normalized.magnitude;
 
             if (Collision && velMagnitudeNormalized > MinSlidingFactor)
             {

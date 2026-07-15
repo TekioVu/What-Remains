@@ -118,7 +118,7 @@ namespace UHFPS.Runtime
             else return;
 
             gameManager.HidePointer();
-            BallObject.velocity = Vector3.zero;
+            BallObject.linearVelocity = Vector3.zero;
             BallObject.gameObject.SetActive(false);
         }
 
@@ -128,7 +128,7 @@ namespace UHFPS.Runtime
             {
                 PutBallTrigger.enabled = false;
                 BallObject.transform.position = BallStart.position;
-                BallObject.velocity = Vector3.zero;
+                BallObject.linearVelocity = Vector3.zero;
                 BallObject.gameObject.SetActive(true);
             }
             else if (trigger == TriggerType.GrabBall)

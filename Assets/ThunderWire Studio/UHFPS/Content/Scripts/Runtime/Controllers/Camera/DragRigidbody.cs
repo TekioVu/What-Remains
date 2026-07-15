@@ -148,7 +148,7 @@ namespace UHFPS.Runtime
                 holdRotatePoint.transform.position = Vector3.zero;
                 holdRotatePoint.transform.eulerAngles = raycastObject.transform.eulerAngles;
 
-                draggableRigidbody.velocity = Vector3.zero;
+                draggableRigidbody.linearVelocity = Vector3.zero;
                 draggableRigidbody.useGravity = false;
                 draggableRigidbody.isKinematic = false;
             }
@@ -254,13 +254,13 @@ namespace UHFPS.Runtime
                 float distanceFactor = Mathf.Clamp01(Vector3.Distance(grabPos, currPos));
                 Transform rotateTransform = HitpointOffset ? holdRotatePoint.transform : holdPoint.transform;
 
-                draggableRigidbody.velocity = Vector3.Lerp(draggableRigidbody.velocity, distanceFactor * DragStrength * massFactor * targetVelocity, 0.3f);
+                draggableRigidbody.linearVelocity = Vector3.Lerp(draggableRigidbody.linearVelocity, distanceFactor * DragStrength * massFactor * targetVelocity, 0.3f);
                 draggableRigidbody.rotation = Quaternion.Slerp(draggableRigidbody.rotation, rotateTransform.rotation, 0.3f);
                 draggableRigidbody.angularVelocity = Vector3.zero;
             }
             else
             {
-                draggableRigidbody.velocity = targetVelocity * DragStrength;
+                draggableRigidbody.linearVelocity = targetVelocity * DragStrength;
                 draggableRigidbody.rotation = Quaternion.Slerp(draggableRigidbody.rotation, holdRotatePoint.transform.rotation, 0.3f);
                 draggableRigidbody.angularVelocity = Vector3.zero;
                 //draggableRigidbody.angularVelocity = Vector3.Lerp(draggableRigidbody.angularVelocity, Vector3.zero, 0.3f);

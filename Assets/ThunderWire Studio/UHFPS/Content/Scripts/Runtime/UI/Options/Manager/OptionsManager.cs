@@ -51,7 +51,7 @@ namespace UHFPS.Runtime
         public bool ApplyAndSaveInputs = true;
         public bool ShowDebug = true;
 
-        private UniversalRenderPipelineAsset URPAsset => (UniversalRenderPipelineAsset)GraphicsSettings.renderPipelineAsset;
+        private UniversalRenderPipelineAsset URPAsset => (UniversalRenderPipelineAsset)GraphicsSettings.defaultRenderPipeline;
 
         private SerializationAsset SerializationAsset
             => SerializationUtillity.SerializationAsset;

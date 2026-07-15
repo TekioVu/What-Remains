@@ -320,7 +320,7 @@ namespace UHFPS.Runtime
                 if (dragSounds)
                 {
                     float angle = Target.localEulerAngles.Component(openableUp).FixAngle(openLimits.min, openLimits.max);
-                    float volumeMag = Mathf.Clamp01(Rigidbody.velocity.magnitude);
+                    float volumeMag = Mathf.Clamp01(Rigidbody.linearVelocity.magnitude);
 
                     if (volumeMag > dragSoundPlay && ((Vector2)openLimits).InRange(angle))
                     {
