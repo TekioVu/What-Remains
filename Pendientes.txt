@@ -1,6 +1,6 @@
--El inventario no funciona en la build
 -Las puertas cuesta abrirlas y no sale el texto de interactuar 
 
-
 Secundarios:
-Se ve cortado los subtitulos de la primera cinemática?
+-Buscar fuente para el menú principal
+-Se ve cortado los subtitulos de la primera cinemática?
+-Logo al iniciar juego
