@@ -1,4 +1,4 @@
--Las puertas cuesta abrirlas y no sale el texto de interactuar 
+-Mejorar un poco la iluminación
 
 Secundarios:
 -Buscar fuente para el menú principal

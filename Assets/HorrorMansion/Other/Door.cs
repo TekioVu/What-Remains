@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;  // Añadir el nuevo namespace
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Door : MonoBehaviour
 {
-    bool trig, open;
-    bool ePressed = false;
+    private bool trig;
+    private bool open;
+
     public float smooth = 2.0f;
     public float DoorOpenAngle = 90.0f;
-    public float rotationTolerance = 1.0f; // Tolerance for stopping rotation
+    public float rotationTolerance = 1.0f;
+
     private Quaternion defaultRot;
     private Quaternion openRot;
+
     public Text txt;
 
     [SerializeField] private GameObject audioManagerHolder;
@@ -21,39 +24,60 @@ public class Door : MonoBehaviour
     void Start()
     {
         defaultRot = transform.rotation;
-        openRot = Quaternion.Euler(defaultRot.eulerAngles + Vector3.up * DoorOpenAngle);
+        openRot = Quaternion.Euler(
+            defaultRot.eulerAngles + Vector3.up * DoorOpenAngle
+        );
 
-        if(audioManagerNecessary)
-        audioManager = audioManagerHolder.GetComponent<AudioManager>();
+        if (audioManagerNecessary)
+        {
+            audioManager = audioManagerHolder.GetComponent<AudioManager>();
+        }
+
+        txt.text = " ";
     }
 
     void Update()
     {
-        if (ePressed && trig)
+        // Comprobar la E aquí, no en OnTriggerStay
+        if (trig && Keyboard.current.eKey.wasPressedThisFrame)
         {
             open = !open;
-            ePressed = false;
+
+            if (audioManagerNecessary)
+            {
+                if (open)
+                    audioManager.PlaySFX(audioManager.openDoor);
+                else
+                    audioManager.PlaySFX(audioManager.closeDoor);
+            }
         }
 
-        if (open && Quaternion.Angle(transform.rotation, openRot) > rotationTolerance )
+        // Abrir
+        if (open && Quaternion.Angle(transform.rotation, openRot) > rotationTolerance)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                openRot,
+                Time.deltaTime * smooth
+            );
         }
+        // Cerrar
         else if (!open && Quaternion.Angle(transform.rotation, defaultRot) > rotationTolerance)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, defaultRot, Time.deltaTime * smooth);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                defaultRot,
+                Time.deltaTime * smooth
+            );
         }
 
+        // Actualizar texto
         if (trig)
         {
             if (open)
-            {
                 txt.text = "Close [E]";
-            }
             else
-            {
                 txt.text = "Open [E]";
-            }
         }
     }
 
@@ -61,15 +85,12 @@ public class Door : MonoBehaviour
     {
         if (coll.CompareTag("Player"))
         {
-            if (!open)
-            {
-                txt.text = "Close [E]";
-            }
-            else
-            {
-                txt.text = "Open [E]";
-            }
             trig = true;
+
+            if (open)
+                txt.text = "Close [E]";
+            else
+                txt.text = "Open [E]";
         }
     }
 
@@ -77,25 +98,8 @@ public class Door : MonoBehaviour
     {
         if (coll.CompareTag("Player"))
         {
-            txt.text = " ";
             trig = false;
-        }
-    }
-
-    private void OnTriggerStay(Collider coll)
-    {
-        if (coll.CompareTag("Player"))
-        {
-            // Cambiar esta línea para usar el nuevo Input System
-            if (Keyboard.current.eKey.wasPressedThisFrame)  // Nueva API
-            {
-                if(audioManagerNecessary)
-                {
-                    if(open) audioManager.PlaySFX(audioManager.openDoor);
-                    else audioManager.PlaySFX(audioManager.closeDoor);
-                }
-                ePressed = true;
-            }
+            txt.text = " ";
         }
     }
 }
