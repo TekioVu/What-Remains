@@ -8,5 +8,4 @@
 -Mejorar animación final para que se vea de fondo el salón, como en la inicial
 
 Secundarios:
--Descipcion botones ascensor
 -Al finalizar el juego, el ratón está oculto y el botón de continue se ve raro. Quitar sino se puede guardar
