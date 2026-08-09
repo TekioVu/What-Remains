@@ -1,6 +1,4 @@
--Mejorar un poco la iluminación
-
 Secundarios:
--Buscar fuente para el menú principal
 -Logo al iniciar juego
 -Warning
+-Transición suave primera cinemática
