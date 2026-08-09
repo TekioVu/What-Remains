@@ -24461,6 +24461,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 265427334444175688, guid: ec4cee6e7ae21c74d9ae8cf75b885477, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265427334444175688, guid: ec4cee6e7ae21c74d9ae8cf75b885477, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
     - target: {fileID: 265427334444175690, guid: ec4cee6e7ae21c74d9ae8cf75b885477, type: 3}
       propertyPath: m_Name
       value: Canvas
