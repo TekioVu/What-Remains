@@ -1,4 +1,2 @@
 Secundarios:
--Logo al iniciar juego
--Warning
 -Transición suave primera cinemática

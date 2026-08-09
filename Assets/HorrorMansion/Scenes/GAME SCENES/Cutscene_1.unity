@@ -13391,8 +13391,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468956614}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.42163, y: 17.63879, z: 7.660553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 88.97, y: 17.63879, z: 7.660553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20955,7 +20955,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -30713,6 +30713,7 @@ GameObject:
   - component: {fileID: 1120893462}
   - component: {fileID: 1120893461}
   - component: {fileID: 1120893460}
+  - component: {fileID: 1120893463}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -30799,6 +30800,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120893458}
   m_CullTransparentMesh: 1
+--- !u!114 &1120893463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120893458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75e29f79afd23b408b39485d13246da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeScript
+  disappear: 0
 --- !u!1001 &1124694105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46697,7 +46711,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700729624}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.05922375, y: 0.7330233, z: -0.06435685, w: 0.6745574}
+  m_LocalRotation: {x: 0.059223738, y: 0.73302335, z: -0.06435685, w: 0.6745573}
   m_LocalPosition: {x: 2.402, y: 20.915, z: -3.666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -48264,7 +48278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2209b91cc7496fb4995b5b42bae0e3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 32.5
+  timer: 33
   scene: Cutscene_2
 --- !u!4 &1771680082
 Transform:
@@ -58084,7 +58098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122475819}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.049325276, y: -0.7053843, z: 0.049325276, w: 0.7053843}
+  m_LocalRotation: {x: 0.05547897, y: -0.70492697, z: 0.05547897, w: 0.70492697}
   m_LocalPosition: {x: 9.527, y: -2.294, z: 1.5400085}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
