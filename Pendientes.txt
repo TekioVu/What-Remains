@@ -1,2 +1,12 @@
+-Desactivar fade en cutscene2 o el menú de pausa
+
+-Quitar opción save game
+
+-La puerta no detecta bien si se han encontrado todas las llaves
+-Problema al cancelar el desbloquear la puerta de las llaves
+-El texto de los subtitulos puede tapar apply en el menú de opciones, ver si hay layers
+-Mejorar animación final para que se vea de fondo el salón, como en la inicial
+
 Secundarios:
--Transición suave primera cinemática
+-Descipcion botones ascensor
+-Al finalizar el juego, el ratón está oculto y el botón de continue se ve raro. Quitar sino se puede guardar
