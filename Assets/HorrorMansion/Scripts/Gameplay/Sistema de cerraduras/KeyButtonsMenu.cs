@@ -9,6 +9,7 @@ public class KeyButtonsMenu : MonoBehaviour
     [SerializeField] private GameObject[] doorLocks;
     [SerializeField] private GameObject puzzleCameraHolder;
     [SerializeField] private GameObject audioManagerHolder;
+    [SerializeField] private KeyLockManager keyLockManager;
 
     private Dictionary<string, int> keyToDoorMap;
 
@@ -64,8 +65,11 @@ public class KeyButtonsMenu : MonoBehaviour
             
             if(failsUntilMessage == 0)
             {
-                audioManager.PlaySFX(audioManager.specificCombination);
-                failsUntilMessage = 2;
+                if (keyLockManager.DoorLocked())
+                {
+                   audioManager.PlaySFX(audioManager.specificCombination);
+                    failsUntilMessage = 2; 
+                }
             } else failsUntilMessage--;   
         
             puzzleCamera.ExitPuzzle();

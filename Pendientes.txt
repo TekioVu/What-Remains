@@ -2,8 +2,6 @@
 
 -Quitar opción save game
 
--La puerta no detecta bien si se han encontrado todas las llaves
--Problema al cancelar el desbloquear la puerta de las llaves
 -El texto de los subtitulos puede tapar apply en el menú de opciones, ver si hay layers
 -Mejorar animación final para que se vea de fondo el salón, como en la inicial
 

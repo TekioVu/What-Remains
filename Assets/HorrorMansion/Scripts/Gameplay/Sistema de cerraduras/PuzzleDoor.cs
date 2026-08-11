@@ -1,17 +1,20 @@
 using UnityEngine;
-using UnityEngine.InputSystem;  // Añadir el nuevo namespace
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections;
 
 public class PuzzleDoor : MonoBehaviour
 {
-    bool trig, open;
-    bool ePressed = false;
+    private bool trig;
+    private bool open;
+
     public float smooth = 2.0f;
     public float DoorOpenAngle = 90.0f;
-    public float rotationTolerance = 1.0f; // Tolerance for stopping rotation
+    public float rotationTolerance = 1.0f;
+
     private Quaternion defaultRot;
     private Quaternion openRot;
+
     public Text txt;
 
     [SerializeField] private GameObject HandleButtons;
@@ -22,7 +25,7 @@ public class PuzzleDoor : MonoBehaviour
     private KeyLockManager keyLockManager;
     private PuzzleCamera puzzleCameraScript;
     private AudioManager audioManager;
-    private KeyTriggerManager keyTriggerManager;
+    private KeyManager keyTriggerManager;
 
     private bool alreadyDialogued = false;
     private bool lookingPuzzle = false;
@@ -30,40 +33,117 @@ public class PuzzleDoor : MonoBehaviour
     void Start()
     {
         defaultRot = transform.rotation;
-        openRot = Quaternion.Euler(defaultRot.eulerAngles + Vector3.up * DoorOpenAngle);
+
+        openRot = Quaternion.Euler(
+            defaultRot.eulerAngles + Vector3.up * DoorOpenAngle
+        );
 
         keyLockManager = HandleButtons.GetComponent<KeyLockManager>();
         puzzleCameraScript = puzzleCamera.GetComponent<PuzzleCamera>();
         audioManager = audioManagerHolder.GetComponent<AudioManager>();
-        keyTriggerManager = keyTriggerManagerHolder.GetComponent<KeyTriggerManager>();
+        keyTriggerManager = keyTriggerManagerHolder.GetComponent<KeyManager>();
+
+        txt.text = " ";
     }
 
     void Update()
     {
-        if (ePressed && trig)
+        if (lookingPuzzle && !puzzleCamera.activeSelf)
         {
-            open = !open;
-            ePressed = false;
+            lookingPuzzle = false;
+        }
+        // Comprobar la E aquí, no en OnTriggerStay
+        if (trig && Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            // Si la puerta está cerrada
+            if (!open)
+            {
+                // Si necesita las llaves y todavía no las tiene
+                if (!keyTriggerManager.AllKeysObtained())
+                {
+                    if (!alreadyDialogued)
+                    {
+                        alreadyDialogued = true;
+
+                        audioManager.PlaySFX(audioManager.needToFindKeys);
+
+                        StartCoroutine(DialogueCooldown());
+
+                        txt.text = "";
+                    }
+
+                    return;
+                }
+
+                // Si las llaves están conseguidas pero el puzzle
+                // todavía está bloqueando la puerta
+                if (keyLockManager.DoorLocked())
+                {
+                    lookingPuzzle = true;
+
+                    txt.text = "";
+
+                    puzzleCamera.SetActive(true);
+                    puzzleCameraScript.CameraActivated();
+
+                    return;
+                }
+
+                // Si no está bloqueada, puede abrirse
+                open = true;
+
+                if (audioManager != null)
+                {
+                    audioManager.PlaySFX(audioManager.openDoor);
+                }
+            }
+            else
+            {
+                // Cerrar la puerta
+                open = false;
+
+                if (audioManager != null)
+                {
+                    audioManager.PlaySFX(audioManager.closeDoor);
+                }
+            }
         }
 
+        // Abrir
         if (open && Quaternion.Angle(transform.rotation, openRot) > rotationTolerance)
         {
-            if(!keyLockManager.DoorLocked())
-                transform.rotation = Quaternion.Slerp(transform.rotation, openRot, Time.deltaTime * smooth);
-            else if(keyTriggerManager.AllKeysObtained() && trig)
-            {
-                lookingPuzzle = true;
-
-                txt.text = "";
-                puzzleCamera.SetActive(true);
-                puzzleCameraScript.CameraActivated();
-            } 
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                openRot,
+                Time.deltaTime * smooth
+            );
+        }
+        // Cerrar
+        else if (!open && Quaternion.Angle(transform.rotation, defaultRot) > rotationTolerance)
+        {
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                defaultRot,
+                Time.deltaTime * smooth
+            );
         }
 
-        if (trig && keyLockManager.DoorLocked() && !lookingPuzzle)
+        // Actualizar texto
+        if (trig && !lookingPuzzle)
         {
-            txt.text = "Unlock Door \\[E\\]";
-        }  
+            if (open)
+            {
+                txt.text = "Close [E]";
+            }
+            else if (keyLockManager.DoorLocked())
+            {
+                txt.text = "Unlock Door [E]";
+            }
+            else
+            {
+                txt.text = "Open [E]";
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider coll)
@@ -71,6 +151,16 @@ public class PuzzleDoor : MonoBehaviour
         if (coll.CompareTag("Player"))
         {
             trig = true;
+
+            if (!lookingPuzzle)
+            {
+                if (open)
+                    txt.text = "Close [E]";
+                else if (keyLockManager.DoorLocked())
+                    txt.text = "Unlock Door [E]";
+                else
+                    txt.text = "Open [E]";
+            }
         }
     }
 
@@ -78,27 +168,8 @@ public class PuzzleDoor : MonoBehaviour
     {
         if (coll.CompareTag("Player"))
         {
-            txt.text = " ";
             trig = false;
-        }
-    }
-
-    private void OnTriggerStay(Collider coll)
-    {
-        if (coll.CompareTag("Player"))
-        {
-            if (Keyboard.current.eKey.wasPressedThisFrame)
-            {
-                ePressed = true;
-
-                if(!keyTriggerManager.AllKeysObtained() && !alreadyDialogued)
-                {
-                    alreadyDialogued = true;
-                    audioManager.PlaySFX(audioManager.needToFindKeys);
-                    StartCoroutine(DialogueCooldown());
-                    txt.text = "";
-                }
-            }
+            txt.text = " ";
         }
     }
 

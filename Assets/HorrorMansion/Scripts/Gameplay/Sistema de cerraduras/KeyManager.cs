@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
-    private List<Key.KeyType> keyList;
-
-    private void Awake()
-    {
-        keyList = new List<Key.KeyType>();
+    public enum KeyColor{
+        PURPLE,
+        RED,
+        ORANGE,
+        YELLOW,
+        BLUE,
+        LAST_ELEMENT
     }
 
-    public void AddKey(Key.KeyType keyType)
+    private bool[] keysObtained = new bool[(int)KeyColor.LAST_ELEMENT];
+    public bool AllKeysObtained()
     {
-        keyList.Add(keyType);
+        for(int i = 0; i < keysObtained.Length; i++)
+        {
+            if(!keysObtained[i]) return false;
+        }
+
+        return true;
     }
 
-    public void RemoveKey(Key.KeyType keyType)
+    public void ObtainKey(int color)
     {
-        keyList.Remove(keyType);
+        keysObtained[color] = true;
     }
 
-    
 }
