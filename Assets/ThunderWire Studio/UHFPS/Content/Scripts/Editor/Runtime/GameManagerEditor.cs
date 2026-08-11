@@ -30,6 +30,7 @@ namespace UHFPS.Editors
                     EditorGUILayout.LabelField("Main Panels", EditorStyles.boldLabel);
                     Properties.Draw("GamePanel");
                     Properties.Draw("PausePanel");
+                    Properties.Draw("PanelToHide");
                     Properties.Draw("DeadPanel");
 
                     EditorGUILayout.Space(2f);

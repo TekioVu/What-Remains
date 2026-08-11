@@ -53,6 +53,8 @@ namespace UHFPS.Runtime
         // Main Panels
         public CanvasGroup GamePanel;
         public CanvasGroup PausePanel;
+        public GameObject PanelToHide;
+
         public CanvasGroup DeadPanel;
 
         // Sub Panels
@@ -890,6 +892,9 @@ namespace UHFPS.Runtime
             // un-freeze player functions
             if (PlayerPresence.PlayerIsUnlocked)
                 PlayerPresence.FreezePlayer(false, false);
+
+            if(PanelToHide != null)
+                PanelToHide.SetActive(!PanelToHide.activeSelf);
         }
 
         public void MainMenu()
@@ -921,6 +926,9 @@ namespace UHFPS.Runtime
                 // freeze player functions
                 if (PlayerPresence.PlayerIsUnlocked)
                     PlayerPresence.FreezePlayer(IsPaused, IsPaused);
+
+                if(PanelToHide != null)
+                    PanelToHide.SetActive(!PanelToHide.activeSelf);
             }
         }
 
