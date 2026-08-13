@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HorrorMansion/Scenes/GAME SCENES/GAME 2 (ELEVATOR).unity
     guid: fffdb69d172ff5b438a23b40a4f5cd8c
+  - enabled: 1
+    path: Assets/ThunderWire Studio/UHFPS/Content/Scenes/LevelManager.unity
+    guid: e8115f250f482ec4d8ad6ea1dc55e505
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: ae838b1c970aab641bb8e4643590df24, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: ce68c4c37abec5347801e4204a280574, type: 2}

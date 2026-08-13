@@ -113,17 +113,14 @@ MonoBehaviour:
       Text: You have died
   - Section: loading
     Localizations:
-    - Key: description.demoscene
-      Text: In this demo scene, you will be able to witness and explore all the impressive
-        features that come with the kit. This scene has been specially designed to
-        showcase the full potential of the asset, so you can fully test its capabilities.
-    - Key: description.demoscene2
-      Text: In this interactive demo scene, you will have the opportunity to engage
-        firsthand with the elevator system, showcasing its seamless operation and
-        integration along with the other great features of the kit.
-    - Key: description.demoscene3
-      Text: It's raining outside, you can test how the raindrop effect works when
-        you're sheltered under a roof or not.
+    - Key: Cutscene2
+      Text: 'A few days earlier...
+
+        Some things are better left forgotten.'
+    - Key: GAME
+      Text: The house has been abandoned... but you are not alone.
+    - Key: GAME 2 ELEVATOR
+      Text: There is no turning back.
   - Section: titles
     Localizations:
     - Key: putaway

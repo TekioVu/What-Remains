@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -131,6 +127,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[0].SceneName
+      value: GAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[1].SceneName
+      value: GAME 2 (ELEVATOR)
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[2].SceneName
+      value: Cutscene_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[3].SceneName
+      value: Raining
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[3].Background
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a90b4371d5d5b6458c58d448a0e4d7e, type: 3}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[0].Title.GlocText
+      value: '*The Beginning'
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[1].Title.GlocText
+      value: '*The Mansion'
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[2].Title.GlocText
+      value: '*What Lies Beneath'
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[3].Title.GlocText
+      value: '*Raining'
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[0].Description.GlocText
+      value: loading.GAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[1].Description.GlocText
+      value: loading.GAME 2 ELEVATOR
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[2].Description.GlocText
+      value: loading.Cutscene2
+      objectReference: {fileID: 0}
+    - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: LevelInfos.Array.data[3].Description.GlocText
+      value: loading.description.demoscene3
+      objectReference: {fileID: 0}
     - target: {fileID: 1397992443369760298, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -199,6 +251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3373390543984086613, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 4162225303223942720, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -234,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 6346654058028483200, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223006730287496768, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
