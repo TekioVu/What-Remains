@@ -1,4 +1,2 @@
--Quitar opción save game o añadir la funcionalidad con el LevelManager
-
--En la cutscene2, al pausar y despausar se reproduce de nuevo la animación fade
--Desactivar fade en cutscene2 o el menú de pausa
+Secundarios:
+En la cutscene 2 se reproduce la animación de fade al cerrar el menú de pausa
