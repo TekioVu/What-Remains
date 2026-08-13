@@ -1,2 +1,4 @@
 Secundarios:
 En la cutscene 2 se reproduce la animación de fade al cerrar el menú de pausa
+
+Guardar al cambiar de escena?
